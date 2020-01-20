@@ -58,7 +58,29 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+	const keys = document.querySelectorAll('.key');
 
+	function removeTransition(e){
+		if(e.propertyName === 'transform' ) this.classList.remove('playing');
+	}
+
+	function playBeat(e){
+		const key = e.keyCode;
+		const audio = document.querySelector('audio[data-key="'+key+'"]')
+		const kbd = document.querySelector('.key[data-key="'+key+'"]')
+		if(!audio) return; // 키와 일치하지 않으면 다음의 것을 실행 안함
+		audio.currentTime =0; // 오디오 태그의 시간을 0으로 되돌려서 막 눌러도 소리가 나게 처리  // currentTime = 오디오,비디오의 현재 시간을 설정하거나 반환
+		audio.play();
+		kbd.classList.add('playing');
+	}
+
+
+	window.addEventListener('keydown',playBeat);
+	keys.forEach(function (item) {
+		return item.addEventListener('transitionend', removeTransition);
+	});
+	// ES6 문법 : keys.forEach(item => item.addEventListener('transitionend', removeTransition))
+	//  A.forEach =  배열 요소 각각에 대해 실행(forEach는 배열에서만 실행 가능)
 </script>
 
 
