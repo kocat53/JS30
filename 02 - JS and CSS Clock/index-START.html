@@ -61,14 +61,43 @@
       height: 6px;
       background: black;
       position: absolute;
-      top: 50%;
+	  top: 50%;
+	  transform-origin: 100%;
+	  transform: rotate(90deg);
+	  /* transition: all 0.05s for; */
     }
 
   </style>
+	<script>
+		const hourHand = document.querySelector('.hour-hand'),
+			minHand = document.querySelector('.min-hand'),
+			secondHand = document.querySelector('.second-hand');
 
-  <script>
+		function setDate(){
+			// 각도 구하기
+			function getTimeDegress(deg,time=60){
+				return ((deg/time)*360)+90;
+			}
 
+			// 스타일 적용하기
+			function setAngle(deg){
+				return 'rotate('+deg+'deg)';
+			}
 
-  </script>
+			const now = new Date(),
+				seconds = now.getSeconds(),
+				mins = now.getMinutes(),
+				hours = now.getHours();
+			
+			const secondDegres = getTimeDegress(seconds),
+				minDegres = getTimeDegress(mins),
+				hourDegres = getTimeDegress(hours);
+			
+				secondHand.style.transform = setAngle(secondDegres);
+				minHand.style.transform = setAngle(minDegres);
+				hourHand.style.transform = setAngle(hourDegres,12);
+		}
+		setInterval(setDate,1000);
+	</script>
 </body>
 </html>
