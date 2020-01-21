@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="index.css">
+	<title>WAI-ARIA</title>
+</head>
+<body>
+	<ul class="list_item">
+		<li class="on">
+			<button>탭메뉴</button>
+			<div class="sample">
+				<ul class="sample_tab">
+					<li><a href="#;">메뉴1</a></li>
+					<li><a href="#;">메뉴2</a></li>
+				</ul>
+				<div class="tab_content">
+					<ul class="detail_content">
+						<li><a href="#;">메뉴1의리스트</a></li>
+						<li><a href="#;">메뉴1의리스트</a></li>
+						<li><a href="#;">메뉴1의리스트</a></li>
+						<li><a href="#;">메뉴1의리스트</a></li>
+						<li><a href="#;">메뉴1의리스트</a></li>
+					</ul>
+					<ul class="detail_content hide">
+						<li><a href="#;">메뉴2의리스트</a></li>
+						<li><a href="#;">메뉴2의리스트</a></li>
+						<li><a href="#;">메뉴2의리스트</a></li>
+						<li><a href="#;">메뉴2의리스트</a></li>
+						<li><a href="#;">메뉴2의리스트</a></li>
+					</ul>
+				</div>
+			</div>
+		</li>
+		<li>
+			<button>탭메뉴2</button>
+			<div class="sample">
+				<p>내용2</p>
+			</div>
+		</li>
+	</ul>
+	<script>
+		const list = document.querySelectorAll('.list_item > li > button');
+		
+		list.forEach(function(target){
+			target.addEventListener('click',function(){
+				const ParentTag = this.parentNode;
+
+				if (ParentTag.classList.value == 'on' ){
+					ParentTag.classList.remove('on');
+				} else{
+					ParentTag.classList.add('on');
+				};
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/* 귀찮아서대충인터넷에있는거 들고옴 */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+button {
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+ul,li {
+	list-style: none;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+:root {
+	--color: #aaa;
+}
+
+.list_item {
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 3vw;
+}
+
+.list_item >li  {
+	border: 1px solid var(--color);
+}
+
+.list_item >li + li {
+	border-top: 0;
+}
+
+
+.list_item >li > button {
+	display: block;
+	width: 100%;
+	padding: 10px 20px;
+	text-align: left;
+	font-size: 16px;
+}
+
+.list_item >li > div {
+	display: none;
+}
+
+.list_item > li.on > button {
+	background-color: #eee;
+	font-weight: 600;
+}
+
+.list_item > li.on > div {
+	display: block;
+	background-color: #f4f4f4;
+}
+
+.hide {
+	display: none;
+}
+
+a {
+	color: #444;
+	text-decoration: none;
+}
+
+.sample {
+	position: relative;
+	border-top: 1px solid var(--color);
+	padding: 10px 20px;
+}
+
+.sample_tab {
+	overflow: hidden;
+	border: 1px solid red;
+	margin-bottom: 10px;
+}
+
+.tab_content {
+	padding: 10px;
+	border: 1px solid blue;
+}
+
+
+.sample_tab > li {
+	float: left;
+}
+.sample_tab > li > a {
+	padding: 5px 13px;
+}
